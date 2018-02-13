@@ -62,7 +62,7 @@ def authorized():
             #save user data and set log in message
             session['github_token']=(resp['access_token'],'')
             session['user_data']=github.get('user').data
-            session['user_repos']=github.get('user').data
+            
             message="you were successfully logged in as " + session['user_data']['login']
         except:
             #clear the session and give error message
@@ -81,8 +81,8 @@ def renderPage1():
 
 @app.route('/page2')
 def renderPage2():
-    if 'user_repos' in session:
-        user_repos_pprint = pprint.pformat(session['user_repos']['public_repos'])
+    if 'user_data' in session:
+        user_repos_pprint = pprint.pformat(session['user_data']['public_repos'])
         print("ok")
     else:
         user_repos_pprint='';
