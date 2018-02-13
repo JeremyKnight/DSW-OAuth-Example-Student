@@ -83,6 +83,7 @@ def renderPage1():
 def renderPage2():
     if 'user_repos' in session:
         user_repos_pprint = pprint.pformat(session['user_repos']['public_repos'])
+        print("ok")
     else:
         user_repos_pprint='';
     return render_template('page2.html', user_repos_data=user_repos_pprint)
