@@ -86,7 +86,7 @@ def renderPage2():
         print("ok")
     else:
         user_repos_pprint='';
-    return render_template('page2.html', user_repos_data=user_repos_pprint)
+    return render_template('page2.html', user_repos_data="number of public repositories: " + user_repos_pprint)
 
 #the tokengetter is automatically called to check who is logged in
 @github.tokengetter
