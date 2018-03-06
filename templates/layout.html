@@ -28,6 +28,7 @@
                 {% for message in messages %}
                     <!---li class="{{ category }}">{{message}}</li-->
                     <div class= "alert alert-success">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         {{message}}
                     </div>
                 {%endfor%}
